@@ -15,3 +15,8 @@ const multiply = function (x, y) {
 const divide = function (x, y) {
     return x / y;
 };
+
+//operate
+const operate = function (operator, x, y) {
+    return operator(x, y)
+}
