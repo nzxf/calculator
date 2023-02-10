@@ -29,8 +29,8 @@ let inputDigit = []
 const digits = document.querySelectorAll('.digit');
 digits.forEach(digit => digit.addEventListener('click', function () {
     inputDigit.push(digit.value)
-    console.log(inputDigit)
-    display.innerText = inputDigit
+    // console.log(inputDigit)
+    display.innerText = inputDigit.join('')
 }
 ))
 
@@ -42,7 +42,40 @@ operators.forEach(operator => operator.addEventListener('click', function () {
     board.push(inputDigit.join(''))
     inputDigit = []
     inputOperator = operator.value
-    console.log(operator.value)
-    console.log(inputOperator)
+    // console.log(inputOperator)
 }))
 
+//clear
+const clearButton = document.querySelector('#clear-button')
+clearButton.addEventListener('click', function () {
+    display.innerText = ''
+    inputDigit = []
+    board = []
+})
+
+//equal
+const equalButton = document.querySelector('#equal-button')
+equalButton.addEventListener('click', function () {
+    board.push(inputDigit.join(''))
+    inputDigit = []
+    // console.log(board)
+    // console.log(board[0] + inputOperator + board[1])
+    switch (inputOperator) {
+        case "add":
+            // console.log(add(parseInt(board[0]), parseInt(board[1])))
+            display.innerText = add(parseInt(board[0]), parseInt(board[1]))
+            break;
+        case "subtract":
+            // console.log(subtract(parseInt(board[0]), parseInt(board[1])))
+            display.innerText = subtract(parseInt(board[0]), parseInt(board[1]))
+            break;
+        case "multiply":
+            // console.log(multiply(parseInt(board[0]), parseInt(board[1])))
+            display.innerText = multiply(parseInt(board[0]), parseInt(board[1]))
+            break;
+        case "divide":
+            // console.log(divide(parseInt(board[0]), parseInt(board[1])))
+            display.innerText = divide(parseInt(board[0]), parseInt(board[1]))
+            break;
+    }
+})
