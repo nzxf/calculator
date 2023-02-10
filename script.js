@@ -18,5 +18,31 @@ const divide = function (x, y) {
 
 //operate
 const operate = function (operator, x, y) {
-    return operator(x, y)
+    return operator(x, y);
+};
+
+//display
+const display = document.querySelector('#display');
+
+//input digit
+let inputDigit = []
+const digits = document.querySelectorAll('.digit');
+digits.forEach(digit => digit.addEventListener('click', function () {
+    inputDigit.push(digit.value)
+    console.log(inputDigit)
+    display.innerText = inputDigit
 }
+))
+
+//input operator
+let inputOperator = ''
+let board = []
+const operators = document.querySelectorAll('#operator-container button')
+operators.forEach(operator => operator.addEventListener('click', function () {
+    board.push(inputDigit.join(''))
+    inputDigit = []
+    inputOperator = operator.value
+    console.log(operator.value)
+    console.log(inputOperator)
+}))
+
