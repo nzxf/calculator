@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Calcie</title>
     <link rel="shortcut icon" href="#">
 </head>
+
 <body>
     <div id="main-body">
         <div id="display"></div>
-        <div id="operator-container">
-            <button class="operator" value="add">&#43;</button>
-            <button class="operator" value="subtract" >&#45;</button>
-            <button class="operator" value="multiply">&#215;</button>
-            <button class="operator" value="divide">&#47;</button>
-        </div>
-        <div id="operator-rest">
-            <button class="operator" id="equal-button" value="equal">&#61;</button>
-            <button class="operator" id="clear-button" value="clear">&#67;</button>
-        </div>
-        <div id="digit-container">
-            <button class="digit" value="1">1</button>
-            <button class="digit" value="2">2</button>
-            <button class="digit" value="3">3</button>
-            <button class="digit" value="4">4</button>
-            <button class="digit" value="5">5</button>
-            <button class="digit" value="6">6</button>
-            <button class="digit" value="7">7</button>
-            <button class="digit" value="8">8</button>
-            <button class="digit" value="9">9</button>
-            <button class="digit" value="0">0</button>
+        <div id="input">
+            <div id="operator-rest">
+                <button class="operator" id="equal" value="equal">&#61;</button>
+                <button class="operator" id="clear" value="clear">&#67;</button>
+            </div>
+            <div id="operator-container">
+                <button class="operator" id="add" value="+">&#43;</button>
+                <button class="operator" id="subtract" value="-">&#45;</button>
+                <button class="operator" id="multiply" value="x">&#215;</button>
+                <button class="operator" id="divide" value=":">&#58;</button>
+            </div>
+            <div id="digit-container">
+                <button class="digit" value="1">1</button>
+                <button class="digit" value="2">2</button>
+                <button class="digit" value="3">3</button>
+                <button class="digit" value="4">4</button>
+                <button class="digit" value="5">5</button>
+                <button class="digit" value="6">6</button>
+                <button class="digit" value="7">7</button>
+                <button class="digit" value="8">8</button>
+                <button class="digit" value="9">9</button>
+                <button class="digit" value="0">0</button>
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
