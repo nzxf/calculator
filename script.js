@@ -58,22 +58,33 @@ digits.forEach(digit => digit.addEventListener('click', function () {
 //input: operator
 const operators = document.querySelectorAll('#operator-container button');
 operators.forEach(operator => operator.addEventListener('click', function () {
-    board.push(inputDigits.join(''))
-    if (board[0] === '') {
+    // board.push(inputDigits.join(''))
+    if (board[0] === '' || board[2] === '') {
         console.log('wrong input, resetting')
-        clear()
+        display.innerText = 'wrong input, resetting'
+        setTimeout(() => {
+            clear()
+        }, "1000")
     }
     else if (board.length === 3) {
+        board.push(inputDigits.join(''))
         result = operate(parseInt(board[0]), board[1], parseInt(board[2]))
         console.log(`${board[0]} ${board[1]} ${board[2]} = ${result}`)
         display.innerText = result
         board = [result]
         board.push(operator.value)
         inputDigits = []
-    } else {
+    }
+    else if (inputDigits == '') {
         board.push(operator.value)
-        inputDigits = []
         console.log(operator.value);
+        inputDigits = []
+    }
+    else {
+        board.push(inputDigits.join(''))
+        board.push(operator.value)
+        console.log(operator.value);
+        inputDigits = []
     }
 }))
 
@@ -81,14 +92,17 @@ operators.forEach(operator => operator.addEventListener('click', function () {
 const equal = document.querySelector('#equal')
 equal.addEventListener('click', function () {
     board.push(inputDigits.join(''))
-    if (board.length < 2 || board[2] === '') {
+    if (board.length !== 3 || board[2] === '') {
         console.log('wrong input, resetting')
-        clear()
+        display.innerText = 'wrong input, resetting'
+        setTimeout(() => {
+            clear()
+        }, "1200")
     } else {
         let result = operate(parseInt(board[0]), board[1], parseInt(board[2]))
         console.log(`${board[0]} ${board[1]} ${board[2]} = ${result}`)
         display.innerText = result
-        board = []
+        board = [result]
         inputDigits = []
     }
 })
