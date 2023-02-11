@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "digital-7";
+    src: url("/fonts/digital-7.ttf") format("truetype");
+}
+
 * {
     box-sizing: border-box;
     /* border: dotted; */
@@ -6,41 +11,56 @@
 }
 
 body {
-    background-color: #adfda288;
-    width: 80%;
-    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    height: 680px;
+    background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
 }
 
 #main-body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 360px;
     padding: 5px;
+    margin: 20px;
     border-radius: 15px;
-    background-color: #fcfcfc;
+    background-color: #f0f0f0;
+    
+    border-left: 5px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.1);
 
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 #display-panel {
     display: flex;
     justify-content: center;
 
-    height: 110px;
+    height: 130px;
 }
 
 #display {
+    font-family: "digital-7";
+    font-size: 40px;
+    font-weight: 500;
+    color: rgba(17, 43, 21, 0.6);
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 330px;
-    height: 60px;
+    width: 320px;
+    height: 80px;
     background-color: #f7f0f07c;
-    color: rgba(0, 0, 0, 0.7);
 
     padding: 10px;
     border-radius: 10px 10px 0 0;
-    /* border: 1px solid gray; */
+    border-top: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-right: 1.5px solid rgba(0, 0, 0, 0.1);
 }
 
 #input {
@@ -69,12 +89,17 @@ button {
 
     background-color: #75dddd;
     color: aliceblue;
-
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
 }
 
 button:active {
-    transform: translate(1px, 1px);
+    transform: translate(-1px, 1px);
+
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 
@@ -86,4 +111,18 @@ button:active {
 #digit-container>.operator {
     background-color: #f4e04d;
     color: aliceblue;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    padding: 5px;
+}
+
+#footer>span, 
+#footer>span>a {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
 }
