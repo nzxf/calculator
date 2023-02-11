@@ -12,12 +12,14 @@
 
 <body>
     <div id="main-body">
-        <div id="display"></div>
+        <div id="display-panel">
+            <p  id="display"></p>
+        </div>
         <div id="input">
-            <div id="operator-rest">
+            <!-- <div id="operator-rest">
                 <button class="operator" id="equal" value="equal">&#61;</button>
                 <button class="operator" id="clear" value="clear">&#67;</button>
-            </div>
+            </div> -->
             <div id="operator-container">
                 <button class="operator" id="add" value="+">&#43;</button>
                 <button class="operator" id="subtract" value="-">&#45;</button>
@@ -35,8 +37,15 @@
                 <button class="digit" value="8">8</button>
                 <button class="digit" value="9">9</button>
                 <button class="digit" value="0">0</button>
+                <button class="operator" id="clear" value="clear">&#67;</button> 
+                <button class="operator" id="equal" value="equal">&#61;</button>
             </div>
         </div>
+
+    </div>
+    <div id="footer">
+        <span><a href="https://github.com/nzxf"> nzxf</a>
+        </span><span>font by <a href="https://www.1001fonts.com/users/style-7/">Alexander Sizenko</a></span>
     </div>
 
     <script src="script.js"></script>
