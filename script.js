@@ -59,14 +59,21 @@ digits.forEach(digit => digit.addEventListener('click', function () {
 const operators = document.querySelectorAll('#operator-container button');
 operators.forEach(operator => operator.addEventListener('click', function () {
     // board.push(inputDigits.join(''))
-    if (board[0] === '' || board[2] === '') {
+    if (board[0] === operator.value || board[0] === NaN) { //===NaN doesn work 
+        console.log('ops repeated, resetting')
+        display.innerText = 'ops repeated, resetting'
+        setTimeout(() => {
+            clear()
+        }, "1000")
+    }
+    else if (board[0] === '' || board[2] === '') {
         console.log('wrong input, resetting')
         display.innerText = 'wrong input, resetting'
         setTimeout(() => {
             clear()
         }, "1000")
     }
-    else if (board.length === 3) {
+    else if (board.length === 2) { // changed value from 3 to 2
         board.push(inputDigits.join(''))
         result = operate(parseInt(board[0]), board[1], parseInt(board[2]))
         console.log(`${board[0]} ${board[1]} ${board[2]} = ${result}`)
@@ -95,6 +102,13 @@ equal.addEventListener('click', function () {
     if (board.length !== 3 || board[2] === '') {
         console.log('wrong input, resetting')
         display.innerText = 'wrong input, resetting'
+        setTimeout(() => {
+            clear()
+        }, "1200")
+    }
+    else if (board[2] == 0) { //add solution of divided by zero error
+        console.log('haha very funny')
+        display.innerText = 'haha very funny'
         setTimeout(() => {
             clear()
         }, "1200")
